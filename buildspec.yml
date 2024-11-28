@@ -19,7 +19,7 @@ phases:
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push 713850109772.dkr.ecr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app-1:latest
+      - docker push 713850109772.dkr.ecr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app:latest
       - echo Writing image definitions file...
       - printf '[{"name":"monolithic","imageUri":"%s"}]' 713850109772.dkr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app-1:latest > imagedefinitions.json
       - echo "Generated imagedefinitions.json:"
