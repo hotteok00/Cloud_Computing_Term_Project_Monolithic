@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Building the Docker image...
       - docker build -t monolithicarchitecture-spring-boot-app-1 .
-      - docker tag monolithicarchitecture-spring-boot-app-1:latest 713850109772.dkr.ecr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app-1:latest
+      - docker tag monolithicarchitecture-spring-boot-app:latest 713850109772.dkr.ecr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app:latest
       - echo "Loading environment variables from .env..."
       - export $(cat .env | xargs)
   post_build:
