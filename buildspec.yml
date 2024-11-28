@@ -12,7 +12,7 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t monolithicarchitecture-spring-boot-app-1 .
+      - docker build -t monolithicarchitecture-spring-boot-app .
       - docker tag monolithicarchitecture-spring-boot-app:latest 713850109772.dkr.ecr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app:latest
       - echo "Loading environment variables from .env..."
       - export $(cat .env | xargs)
@@ -21,7 +21,7 @@ phases:
       - echo Pushing the Docker image...
       - docker push 713850109772.dkr.ecr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"monolithic","imageUri":"%s"}]' 713850109772.dkr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app-1:latest > imagedefinitions.json
+      - printf '[{"name":"monolithic","imageUri":"%s"}]' 713850109772.dkr.ap-northeast-2.amazonaws.com/monolithicarchitecture-spring-boot-app:latest > imagedefinitions.json
       - echo "Generated imagedefinitions.json:"
       - cat imagedefinitions.json
 artifacts:
